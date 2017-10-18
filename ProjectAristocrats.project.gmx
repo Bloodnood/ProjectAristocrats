@@ -12,7 +12,18 @@
     <sprite>sprites\spr_player_down</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\spr_temp</sprite>
+    <sprites name="wall">
+      <sprite>sprites\spr_wall_tb</sprite>
+      <sprite>sprites\spr_wall_lr</sprite>
+      <sprite>sprites\spr_wall_tb_mask</sprite>
+    </sprites>
+    <sprites name="decorations">
+      <sprite>sprites\spr_bed</sprite>
+      <sprite>sprites\spr_bad_mask</sprite>
+      <sprite>sprites\spr_chest</sprite>
+      <sprite>sprites\spr_chest_mask</sprite>
+    </sprites>
+    <sprite>sprites\spr_player_mask</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_hospital</background>
@@ -21,6 +32,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\show_dialog.gml</script>
+    <script>scripts\set_alpha.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_dialog</font>
@@ -30,6 +42,14 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_dialog</object>
+    <objects name="wall">
+      <object>objects\obj_wall_tb</object>
+      <object>objects\obj_wall_lr</object>
+    </objects>
+    <objects name="decorations">
+      <object>objects\obj_bad</object>
+      <object>objects\obj_chest</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>

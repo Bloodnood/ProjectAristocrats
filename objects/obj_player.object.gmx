@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_player_mask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
-sp = 8
+            <string>///Set variables to move
+image_speed = 0
+sp = 4
 img_sp = 0.25
 
 //0 -&gt; 90 -&gt; 180 -&gt; 270
@@ -63,7 +64,8 @@ alarm[0] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dialog = instance_find(obj_dialog, 0)
+            <string>///Get object of dialogs
+dialog = instance_find(obj_dialog, 0)
 </string>
           </argument>
         </arguments>
@@ -86,7 +88,8 @@ alarm[0] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !dialog.show
+            <string>///Move player
+if !dialog.show
 {
     for(var i = 0; i &lt; 4; i++)
     {
@@ -102,12 +105,14 @@ alarm[0] = 1
                 y += yy
             }
             
+            //continue animaton
             sprite_index = sprite_go[i]
             image_speed = img_sp
         }
     }
 }
 
+//break animation
 if x == xprevious &amp;&amp; y = yprevious
 {
     image_speed = 0
@@ -135,7 +140,8 @@ if x == xprevious &amp;&amp; y = yprevious
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xprevious
+            <string>///Just collition with wall
+x = xprevious
 y = yprevious
 </string>
           </argument>
@@ -170,5 +176,8 @@ y = yprevious
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>16,16</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>
